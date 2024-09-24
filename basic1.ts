@@ -81,18 +81,90 @@ const Testing =(message :string)=>{
     console.log(message);
 }
 
-Testing("I am testing id nodemon and --watch are working properly💥💥💥")
+Testing("I am testing id nodemon and --watch are working properly💥💥💥");
+
+const wildAnimal =(animal:{name:string, age:number ,species:string})=>{
+    console.log(animal);
+}
+
+//Optional you use ?
+const wildAnimal1 =(animal:{name:string, age?:number ,species:string})=>{
+    console.log(animal);
+}
+
+wildAnimal({name: "Elephant", species: "Mammal"})//Property age is missing
+wildAnimal1({name: "Elephant", species: "Mammal"})
+
+const contactName=(user :{first:string,last:string }) =>{
+    return `${user.first} ${user.last}`
+}
+
+
+//Type Aliases
+type school ={
+    name: string;
+    level: string;
+    yearDeveloped:number;
+}
+
+const mySchool : school ={
+    name:"Dedan Kimathi University of Technology",
+    level: "University",
+    yearDeveloped: 1990,
+}
+
+console.log(mySchool);
+
+const lilians =(herschool:school)=>{
+    console.log(herschool);
+}
+lilians({name:"St.Claire Gils",level:"HighSchool",yearDeveloped:1950})
+
+//Array Syntax
+let albums: string[ ]=[
+    "Rubber Soul",
+    "Revolver",
+    "Sgt,Pepper's Lonely Hearts Club Band",
+]
+let dates:number[] =[1234,1234,23456,23456]
+
+let album2: Array<string> = [
+  "Rubber Soul",
+  "Revolver",
+  "Sgt, Pepper's Lonely Hearts Club Band",
+];
+let dates2: Array<number> =[
+    1234,
+    1234,
+    23456,
+    23456,
+]
+console.log(albums ,album2, dates, dates2)
+
+//Tuples----Immutable(array with fixed number of elements)
+
+let album4 : [string ,number] = ["Rubber soul",1980]
+
+
+
+
+
+
+
+
+
+
 
 //UNIONS AND LITERALS
 const messages = Date.now() %2 === 0 ? ' Hello There ' : null;
 
-const loginID =(id : string | number) =>{
+const loginID =(id : string|number) =>{
     console.log(id);
 }
 
 loginID(123);
 loginID("abc");
-loginID(true);//type boolean is not supported
+// loginID(true);//type boolean is not supported
 
 //Declarering union types
 type id = string|number
@@ -144,19 +216,19 @@ logging('qwerty');
 logging(123456);
 
 //This doesn't work in reverse
-const loggingIn=(id :number)=>{
-    console.log(`This is users ${id}`);
-}
-const User ={
-    id: string|number
-}
+// const loggingIn=(id :number)=>{
+//     console.log(`This is users ${id}`);
+// }
+// const User ={
+//     id: string|number
+// }
 
 
-const user: User = {
-    id: 123,
-  }
+// const user: User = {
+//     id: 123,
+//   }
   
-  logId(user.id)
+//   logId(user.id)
 
 
 //Using Typeof

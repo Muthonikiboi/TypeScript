@@ -31,13 +31,12 @@ function validateUsername(username: string | null): boolean {
 validateUsername("Muthonikiboi")
 
 //Exercise 4:Throwing Errors to Narrow
+// const appElement = document.getElementById('app')
+// if (!appElement) {
+//   throw new Error('Could not find app element')
+// }
 
-const appElement = document.getElementById('app')
-if (!appElement) {
-  throw new Error('Could not find app element')
-}
-
-console.log(appElement)
+// console.log(appElement)
 
 //Exercise 5:#Using in to Narrow
 type APIResponse =
