@@ -98,7 +98,8 @@ var dates2 = [
 console.log(albums, album2, dates, dates2);
 //Tuples----Immutable(array with fixed number of elements)
 var album4 = ["Rubber soul", 1980];
-//UNIONS AND LITERALS
+///SOME WORK NOT DONE HERE
+//UNIONS AND LITERALS===Either this type or that type sting|number|boolean|
 var messages = Date.now() % 2 === 0 ? ' Hello There ' : null;
 var loginID = function (id) {
     console.log(id);
@@ -116,12 +117,18 @@ var myObj = {
     hobbies: ['Reading', 'Cooking', 'Gardening'],
 };
 console.log(myObj);
+var color = function (color) {
+    console.log("The color is ".concat(color, "."));
+};
 var myColor = function (color, yesorno) {
     console.log("Do I love the ".concat(color, " color? ").concat(yesorno, "."));
 };
 myColor('yellow', 'yes');
 myColor('black', 'no');
 myColor('white', 'no');
+var myCombination = function (combo) {
+    console.log(combo);
+};
 //NARROWING
 // let myVar : string | number = 'Muthonikiboi';
 // if(typeof myVar ==='string'){
@@ -134,6 +141,18 @@ var logging = function (id) {
 };
 logging('qwerty');
 logging(123456);
+var getAlbumYear1 = function (year) {
+    if (typeof year === 'string') {
+        console.log("The album was released in ".concat(year.toUpperCase(), "."));
+    }
+    else if (typeof year === 'number') {
+        console.log("The album was released in ".concat(year.toFixed(0), "."));
+    }
+    console.log(year);
+};
+getAlbumYear1(1950);
+getAlbumYear1('1950245678909865');
+console.log("My name is Joy");
 //This doesn't work in reverse
 // const loggingIn=(id :number)=>{
 //     console.log(`This is users ${id}`);

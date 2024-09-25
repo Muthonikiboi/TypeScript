@@ -155,7 +155,7 @@ let album4 : [string ,number] = ["Rubber soul",1980]
 
 
 
-//UNIONS AND LITERALS
+//UNIONS AND LITERALS===Either this type or that type sting|number|boolean|
 const messages = Date.now() %2 === 0 ? ' Hello There ' : null;
 
 const loginID =(id : string|number) =>{
@@ -192,6 +192,10 @@ console.log(myObj);
 type color = 'black'|'white'|'green'|'yellow';
 type yesorno = 'yes'|'no';
 
+const color=(color:color) => {
+    console.log(`The color is ${color}.`);
+}
+
 const myColor =(color:color,yesorno:yesorno)=>{
     console.log(`Do I love the ${color} color? ${yesorno}.`);
 }
@@ -199,6 +203,15 @@ const myColor =(color:color,yesorno:yesorno)=>{
 myColor('yellow', 'yes');
 myColor('black','no');
 myColor('white', 'no');
+
+//Combining Two unions
+type color1 = 'black'|'white'|'green'|'yellow';
+type yesorno1 = 'yes'|'no';
+type combination = color1 | yesorno1;
+
+const myCombination = (combo: combination) => {
+    console.log(combo);
+}
 
 //NARROWING
 // let myVar : string | number = 'Muthonikiboi';
@@ -214,6 +227,19 @@ const logging =(id:string |number)=>{
 }
 logging('qwerty');
 logging(123456);
+
+const getAlbumYear1 =(year:string|number|boolean)=>{
+    if (typeof year === 'string'){
+        console.log(`The album was released in ${year.toUpperCase()}.`);
+    }else if (typeof year === 'number'){
+        console.log(`The album was released in ${year.toFixed(0)}.`);
+    }
+    console.log(year);
+}
+getAlbumYear1(1950);
+getAlbumYear1('1950245678909865');
+
+console.log("My name is Joy")
 
 //This doesn't work in reverse
 // const loggingIn=(id :number)=>{
