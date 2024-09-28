@@ -59,17 +59,17 @@ const returnString = () => {
 acceptsCallback(returnString);
 
 //Exercise 7:Typing Async Await
-async function fetchData() {
-  const response = await fetch("https://run.mocky.io/v3/129fd091-e6e5-4508-a077-5857ff34d003");
+// async function fetchData() {
+//   const response = await fetch("https://run.mocky.io/v3/129fd091-e6e5-4508-a077-5857ff34d003");
 
-  const data = await response.json();
+//   const data = await response.json();
 
-  return data;
-}
+//   return data;
+// }
 
-fetchData().then((data) => {
-  console.log(data);
-});
+// fetchData().then((data) => {
+//   console.log(data);
+// });
 
 //UNIONS LITERALS AND NARROWING
 
@@ -159,3 +159,70 @@ try {
 
 //   throw new Error('Parsing error!')
 // }
+
+//Unions ,Literals and Narrowing final assignment
+//Exercise 1: Destructuring a Discriminated Union
+type Circle = {
+  kind?: 'circle'
+  radius: number
+}
+type Square = {
+  kind: 'square'
+  sideLength: number
+}
+type Shape = Circle | Square
+function calculateArea(shape: Shape) {
+  // Property 'sideLength' does not exist on type 'Shape'.
+  // Property 'radius' does not exist on type 'Shape'.
+    if (shape.kind === 'circle') {
+      return Math.PI * shape.radius * shape.radius
+    } else {
+      return shape.sideLength * shape.sideLength
+    }
+  }
+
+// Exercise 2: Narrowing a Discriminated Union with a Switch Statement
+function calculateArea1(shape: Shape) {
+  switch(shape.kind){
+    case "circle":
+      return Math.PI * shape.radius * shape.radius;
+      break;
+    case "square":
+      return shape.sideLength * shape.sideLength;
+      break;
+    default:
+      console.log("none of the two shape is existent");
+      break;
+  }
+}
+
+//Exercise 3: Discriminated Tuples
+// type APIResponse = [string, User[] | string]
+// async function fetchData(): Promise<APIResponse> {
+//   try {
+//     const response = await fetch('https://api.example.com/data')
+
+//     if (!response.ok) {
+//       return [
+//         'error',
+//         // Imagine some improved error handling here
+//         'An error occurred',
+//       ]
+//     }
+
+//     const data = await response.json()
+
+//     return ['success', data]
+//   } catch (error) {
+//     return ['error', 'An error occurred']
+//   }
+// }
+
+//Exercise 4: Handling Defaults with a Discriminated Union.
+function calculateArea4(shape: Shape) {
+  if (shape.kind === 'circle') {
+    return Math.PI * shape.radius * shape.radius
+  } else {
+    return shape.sideLength * shape.sideLength
+  }
+}

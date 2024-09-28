@@ -3,7 +3,7 @@ var acceptObject = function (obj) {
     console.log(obj);
 };
 acceptObject({
-    foo: 'Hello',
+    foo: "Hello",
     bar: 123,
     baz: true,
 });
@@ -89,18 +89,13 @@ var album2 = [
     "Revolver",
     "Sgt, Pepper's Lonely Hearts Club Band",
 ];
-var dates2 = [
-    1234,
-    1234,
-    23456,
-    23456,
-];
+var dates2 = [1234, 1234, 23456, 23456];
 console.log(albums, album2, dates, dates2);
 //Tuples----Immutable(array with fixed number of elements)
 var album4 = ["Rubber soul", 1980];
 ///SOME WORK NOT DONE HERE
 //UNIONS AND LITERALS===Either this type or that type sting|number|boolean|
-var messages = Date.now() % 2 === 0 ? ' Hello There ' : null;
+var messages = Date.now() % 2 === 0 ? " Hello There " : null;
 var loginID = function (id) {
     console.log(id);
 };
@@ -109,12 +104,12 @@ loginID("abc");
 var logID = function (id) {
     console.log(id);
 };
-logID('sdfghjkl');
+logID("sdfghjkl");
 logID(123456);
 var myObj = {
     age: 23,
-    name: 'John',
-    hobbies: ['Reading', 'Cooking', 'Gardening'],
+    name: "John",
+    hobbies: ["Reading", "Cooking", "Gardening"],
 };
 console.log(myObj);
 var color = function (color) {
@@ -123,9 +118,9 @@ var color = function (color) {
 var myColor = function (color, yesorno) {
     console.log("Do I love the ".concat(color, " color? ").concat(yesorno, "."));
 };
-myColor('yellow', 'yes');
-myColor('black', 'no');
-myColor('white', 'no');
+myColor("yellow", "yes");
+myColor("black", "no");
+myColor("white", "no");
 var myCombination = function (combo) {
     console.log(combo);
 };
@@ -139,19 +134,19 @@ var myCombination = function (combo) {
 var logging = function (id) {
     console.log(id);
 };
-logging('qwerty');
+logging("qwerty");
 logging(123456);
 var getAlbumYear1 = function (year) {
-    if (typeof year === 'string') {
+    if (typeof year === "string") {
         console.log("The album was released in ".concat(year.toUpperCase(), "."));
     }
-    else if (typeof year === 'number') {
+    else if (typeof year === "number") {
         console.log("The album was released in ".concat(year.toFixed(0), "."));
     }
     console.log(year);
 };
 getAlbumYear1(1950);
-getAlbumYear1('1950245678909865');
+getAlbumYear1("1950245678909865");
 console.log("My name is Joy");
 //This doesn't work in reverse
 // const loggingIn=(id :number)=>{
@@ -166,10 +161,84 @@ console.log("My name is Joy");
 //   logId(user.id)
 //Using Typeof
 var getAlbumYear = function (year) {
-    if (typeof year === 'string') {
-        console.log("The album was released in ".concat(year.toUppercase(), ".")); // `year` is string
+    if (typeof year === "string") {
+        console.log("The album was released in ".concat(year.toUpperCase(), ".")); // `year` is string
     }
-    else if (typeof year === 'number') {
+    else if (typeof year === "number") {
         console.log("The album was released in ".concat(year.toFixed(0), ".")); // `year` is number
     }
 };
+var album8 = {
+    name: "Rubber Soul",
+    type: "Pop",
+    prodYear: 1980,
+    length: 34.99,
+};
+console.log(album8);
+// let album9 ={
+//     name: string,
+//     type: string,
+//     prodYear: number, ////////////REMEMBER TO CHECK ON THIS SECTION OF OBJECT
+//     length: number,
+// }
+var album10 = {
+    name: "Revolver",
+    type: "Rock",
+    prodYear: 1976,
+    length: 34.2,
+};
+console.log(album10);
+var employee1 = {
+    name: "John",
+    employeeID: 123,
+};
+console.log(employee1);
+var employee2 = {
+    name: "Jane",
+};
+console.log(employee2);
+var manager1 = {
+    name: "Bob",
+    employeeID: 456,
+    department: "Sales",
+};
+console.log(manager1);
+//all items must be included amd you cannot include your own as it leads to an error-Unless it is optional(?)
+var manager2 = {
+    name: "Bob",
+    employeeID: 456,
+};
+console.log(manager2);
+var Managersepc = {
+    name: "Bob",
+    employeeID: 456,
+    department: "Sales",
+    salary: 50000,
+};
+console.log(Managersepc);
+var person1 = {
+    name: "John",
+    age: 30,
+    hobbies: ["reading", "cooking", "gardening"],
+};
+var person3 = {
+    name: "John",
+    age: 30,
+    hobbies: ["reading", "cooking", "gardening"],
+};
+var AlbumEaward = {
+    Granny: "1964",
+    MercuryPrize: "1985",
+    BillBoard: "1967",
+};
+console.log(AlbumEaward);
+//Object Types in functions
+function processValue(value) {
+    console.log(value);
+}
+processValue({ name: "Alice" });
+processValue([1, 2, 3, 4, 5]);
+processValue(function () { });
+processValue("Hello World");
+//Be specific with object type value========CHECK TIHS
+//Reducing duplicates with utility Types
