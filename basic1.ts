@@ -92,7 +92,7 @@ const wildAnimal1 = (animal: {
   console.log(animal);
 };
 
-wildAnimal({ name: "Elephant", species: "Mammal" }); //Property age is missing
+// wildAnimal({ name: "Elephant", species: "Mammal" }); //Property age is missing
 wildAnimal1({ name: "Elephant", species: "Mammal" });
 
 const contactName = (user: { first: string; last: string }) => {
@@ -280,14 +280,14 @@ console.log(album8);
 //     length: number,
 // }
 
-const album10: typeof album9 = {
-  name: "Revolver",
-  type: "Rock",
-  prodYear: 1976,
-  length: 34.2,
-};
+// const album10: typeof album9 = {
+//   name: "Revolver",
+//   type: "Rock",
+//   prodYear: 1976,
+//   length: 34.2,
+// };
 
-console.log(album10);
+// console.log(album10);
 
 type person = {
   name: string;
@@ -330,6 +330,7 @@ console.log(manager1);
 const manager2: Manager = { 
     name: "Bob",
     employeeID: 456,
+    department:"IT"///miss this gives an error
   };
 console.log(manager2);
 
@@ -370,12 +371,12 @@ const person3: Person1 = {
   hobbies: ["reading", "cooking", "gardening"],
 };
 
-const AlbumEaward : Record<"Granny" |"MercuryPrize"|"BillBoard"> ={//////CONSIDER CHACKING THIS AGAIN.
-    Granny: "1964",
-    MercuryPrize: "1985",
-    BillBoard: "1967",
-};
-console.log(AlbumEaward);
+// const AlbumEaward : Record<"Granny" |"MercuryPrize"|"BillBoard"> ={//////CONSIDER CHACKING THIS AGAIN.
+//     Granny: "1964",
+//     MercuryPrize: "1985",
+//     BillBoard: "1967",
+// };
+// console.log(AlbumEaward);
 
 
 //working using interface and the Extend Keyword.
@@ -395,7 +396,40 @@ function processValue(value:object){
 processValue({name:"Alice"});
 processValue([1,2,3,4,5]);
 processValue(()=>{});
-processValue("Hello World");
+// processValue("Hello World");
 
 //Be specific with object type value========CHECK TIHS
 //Reducing duplicates with utility Types
+
+
+
+
+//Mutability
+type AlbumGenre = "rock" | "country" | "electronic"
+let albumGenre = "rock"
+
+const handleGenre =(genre:AlbumGenre)=>{
+
+}
+console.log(albumGenre)
+
+enum Paymentstats{
+  pending= 'pending',
+  declined= 'declined',
+  accepted= 'accepted',
+}
+
+type user ={
+  name:string,
+  status:Paymentstats;
+}
+
+//lets retrieve the payment status form a database
+const statusPayment = "pending"
+
+const JooyUser:user ={
+  name: "Jooy",
+  status: Paymentstats[statusPayment],
+}
+console.log(JooyUser)
+

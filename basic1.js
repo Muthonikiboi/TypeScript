@@ -62,7 +62,7 @@ var wildAnimal = function (animal) {
 var wildAnimal1 = function (animal) {
     console.log(animal);
 };
-wildAnimal({ name: "Elephant", species: "Mammal" }); //Property age is missing
+// wildAnimal({ name: "Elephant", species: "Mammal" }); //Property age is missing
 wildAnimal1({ name: "Elephant", species: "Mammal" });
 var contactName = function (user) {
     return "".concat(user.first, " ").concat(user.last);
@@ -175,19 +175,6 @@ var album8 = {
     length: 34.99,
 };
 console.log(album8);
-// let album9 ={
-//     name: string,
-//     type: string,
-//     prodYear: number, ////////////REMEMBER TO CHECK ON THIS SECTION OF OBJECT
-//     length: number,
-// }
-var album10 = {
-    name: "Revolver",
-    type: "Rock",
-    prodYear: 1976,
-    length: 34.2,
-};
-console.log(album10);
 var employee1 = {
     name: "John",
     employeeID: 123,
@@ -207,6 +194,7 @@ console.log(manager1);
 var manager2 = {
     name: "Bob",
     employeeID: 456,
+    department: "IT" ///miss this gives an error
 };
 console.log(manager2);
 var Managersepc = {
@@ -226,12 +214,6 @@ var person3 = {
     age: 30,
     hobbies: ["reading", "cooking", "gardening"],
 };
-var AlbumEaward = {
-    Granny: "1964",
-    MercuryPrize: "1985",
-    BillBoard: "1967",
-};
-console.log(AlbumEaward);
 //Object Types in functions
 function processValue(value) {
     console.log(value);
@@ -239,6 +221,20 @@ function processValue(value) {
 processValue({ name: "Alice" });
 processValue([1, 2, 3, 4, 5]);
 processValue(function () { });
-processValue("Hello World");
-//Be specific with object type value========CHECK TIHS
-//Reducing duplicates with utility Types
+var albumGenre = "rock";
+var handleGenre = function (genre) {
+};
+console.log(albumGenre);
+var Paymentstats;
+(function (Paymentstats) {
+    Paymentstats["pending"] = "pending";
+    Paymentstats["declined"] = "declined";
+    Paymentstats["accepted"] = "accepted";
+})(Paymentstats || (Paymentstats = {}));
+//lets retrieve the payment status form a database
+var statusPayment = "pending";
+var JooyUser = {
+    name: "Jooy",
+    status: Paymentstats[statusPayment],
+};
+console.log(JooyUser);
